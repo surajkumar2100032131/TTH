@@ -1,0 +1,61 @@
+{%load static %}
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="container">
+<div class="contact-section">
+<h2 class="ct-section-head">
+   CONTACT US
+</h2>
+
+<div class="row contact-fields">
+<div class="col-md-8 left-form">
+   <form action="{% url 'ct' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+         <label class="sr-only" for="fname">First Name *</label>
+         <input class="required form-control" id="fname" name="fn" placeholder="First Name&nbsp;*" type="text">
+      </div>
+      <div class="form-group">
+         <label class="sr-only" for="lname">Last Name *</label>
+         <input class="required form-control" id="lname" name="ln" placeholder="Last Name&nbsp;*" type="text">
+      </div>
+      <div class="form-group">
+         <label class="sr-only" for="email">Email *</label>
+         <input class="required form-control h5-email" id="email" name="email" placeholder="Email&nbsp;*" type="text">
+      </div>
+      <div class="form-group">
+         <label class="sr-only" for="phone">Phone *</label>
+         <input class="required form-control h5-phone" id="phone" name="ph" placeholder="Phone&nbsp;*" type="text">
+      </div>
+      <div class="form-group">
+         <label class="sr-only" for="comment">Type your message here</label>
+         <input class="required form-control" id="comment" name="comm" placeholder="Type your message here&nbsp;*" rows="6" type="text"></input>
+      </div>
+      <button class="btn btn-accent" type="submit">Submit</button>  
+   </form>
+</div>
+<div class="col-md-4 contact-info">
+<div class="phone">
+   <h2>Call</h2>
+   <a href="tel:+4046872730">+917737893123</a>
+</div>
+<div class="email">
+   <h2>Email</h2>
+   <a href="mailto:info@decidedekalb.com">surajkumarjod@gmail.com</a>
+</div>
+<div class="location">
+   <h2>Visit</h2>
+   <p>One Town Center </br>
+      123 Easy Street </br>
+      Suite 1000 </br>
+      Orlando, FL 32803
+      <br>
+      <a class="btn btn-accent" href="https://www.google.com/maps" target="_blank"><img src="https://www.solodev.com/assets/contact-us-page/map-marker.png" alt="Map Marker">Google Maps</a>
+   </p>
+</div>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+  <title>Registration</title>
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="r_form_wrap">
+
+    <div class="title">
+      <p>Registration Form</p>
+    </div>
+
+    <div class="r_form">
+      <form action="{% url 'rg' %}" method="POST">
+        {% csrf_token %}
+        <div class="input_wrap">
+          <label for="username">Username</label>
+          <div class="input_item">
+            <span class="icon">
+              <ion-icon name="person-sharp"></ion-icon>
+            </span>
+            <input type="text" name="username" class="input" id="username">
+          </div>
+        </div>
+        <div class="input_wrap">
+          <label for="email">Email Address</label>
+          <div class="input_item">
+            <span class="icon">
+              <ion-icon name="mail-sharp"></ion-icon>
+            </span>
+            <input type="email" name="email" class="input" id="email" required>
+          </div>
+        </div>
+        <div class="input_wrap">
+          <label for="password">Password</label>
+          <div class="input_item">
+            <span class="icon">
+              <ion-icon name="key-sharp"></ion-icon>
+            </span>
+            <input type="password" name="pass" class="input" id="password">
+          </div>
+        </div>
+        <div class="input_wrap">
+          <label for="confirmpassword">Confirm Password</label>
+          <div class="input_item">
+            <span class="icon">
+              <ion-icon name="key-sharp"></ion-icon>
+            </span>
+            <input type="password" name="cpassword" class="input" id="confirmpassword">
+          </div>
+        </div>
+
+        <button>Register Now</button>
+        <a href="/signin" >I have already account</a><br>
+        <a href="/" >Home</a>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
